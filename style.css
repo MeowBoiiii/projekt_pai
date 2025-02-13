@@ -103,6 +103,48 @@ textarea {
     background-color: #8eb7d239;
 }
 
+/* ====== Układ zdjęć w artykułach ====== */
+
+/* Zdjęcie na górze */
+.article.top-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Zdjęcie w tle */
+.article.background_image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+    min-height: 300px; /* Upewnia się, że tło jest widoczne */
+}
+
+.article.background_image h2,
+.article.background_image p {
+    background: rgba(0, 0, 0, 0.5); /* Przyciemnienie tła tekstu */
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/*
+.article.image-float img {
+    float: left;
+    margin: 0 15px 10px 0;
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+}
+*/
+/* Zdjęcie na dole */
 .article.bottom_image {
     display: flex;
     flex-direction: column;
@@ -115,49 +157,4 @@ textarea {
     height: auto;
     margin-top: 15px;
     border-radius: 8px;
-    order: 2;
-}
-
-.article.bottom_image p {
-    order: 1;
-}
-
-/* Poprawiony styl dla background_image */
-.article.background_image {
-    background-size: cover; /* Sprawia, że zdjęcie tła zajmuje cały element */
-    background-position: center; /* Ustawia zdjęcie na środku */
-    color: white; /* Kolor tekstu dla lepszej czytelności */
-    padding: 40px; /* Przestrzeń wewnątrz artykułu */
-    border-radius: 8px; /* Zaokrąglenie krawędzi */
-    position: relative;
-}
-
-.article.background_image h2,
-.article.background_image p {
-    background: rgba(0, 0, 0, 0.5); /* Przyciemnienie tła tekstu */
-    display: inline-block;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Nowe klasy dla top-image, image-float i bottom-image */
-.article.top-image img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-}
-
-.article.image-float img {
-    float: left;
-    margin: 0 15px 10px 0;
-    max-width: 40%;
-    height: auto;
-}
-
-.article.bottom-image img {
-    display: block;
-    margin: 15px auto;
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
 }
