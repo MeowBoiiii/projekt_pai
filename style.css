@@ -1,0 +1,95 @@
+/* Ustawienia podstawowe */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2c3e50; /* Ciemne tło */
+    margin: 0;
+    padding: 0;
+    color: #ecf0f1; /* Jasny tekst dla lepszej czytelności */
+}
+
+/* Nagłówki */
+h1, h2 {
+    text-align: center;
+    color: #ecf0f1; /* Jasny kolor dla nagłówków */
+}
+
+/* Panel admina */
+.admin-panel {
+    background-color: #34495e; /* Ciemny panel */
+    margin: 20px auto;
+    padding: 30px;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ciemniejszy cień */
+}
+
+/* Formaty formularzy */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Pola formularzy */
+input[type="text"], input[type="file"], textarea, select {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #7f8c8d; /* Jasnoszary border */
+    background-color: #34495e; /* Tło w ciemnym kolorze */
+    color: #ecf0f1; /* Jasny tekst */
+}
+
+input[type="text"]:focus, textarea:focus, select:focus {
+    border-color: #3498db; /* Kolor podświetlenia na niebiesko */
+    background-color: #2c3e50; /* Ciemniejszy kolor tła przy fokusie */
+}
+
+/* Przycisk dodawania artykułu */
+button[type="submit"] {
+    padding: 15px;
+    font-size: 16px;
+    background-color: #2980b9; /* Ciemniejszy niebieski */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1f6394; /* Jeszcze ciemniejszy niebieski na hover */
+}
+
+/* Komunikaty */
+p {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Kolor komunikatów */
+p.success {
+    color: #2ecc71; /* Zielony */
+}
+
+p.error {
+    color: #e74c3c; /* Czerwony */
+}
+
+/* Układ dla zdjęcia */
+input[type="file"] {
+    padding: 5px;
+    border: 1px solid #7f8c8d;
+    background-color: #34495e; /* Ciemniejsze tło */
+    color: #ecf0f1; /* Jasny tekst */
+}
+
+/* Marginesy i odstępy */
+div {
+    margin-bottom: 20px;
+}
+
+/* Wyrównanie treści */
+textarea {
+    min-height: 150px;
+}

@@ -25,19 +25,7 @@ $image_path = $article['image_path'];
 <head>
     <meta charset="UTF-8">
     <title><?php echo htmlspecialchars($article['title']); ?></title>
-    <style>
-        .top-image img {
-            display: block;
-            margin: 0 auto 20px auto;
-        }
-        .image-float img {
-            float: left;
-            margin: 0 20px 20px 0;
-        }
-        .no-image img {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <h1><?php echo htmlspecialchars($article['title']); ?></h1>

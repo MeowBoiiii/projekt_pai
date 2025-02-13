@@ -5,9 +5,11 @@ try {
     $sql = "
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username VARCHAR(50) NOT NULL,
-        password VARCHAR(255) NOT NULL
+        username VARCHAR(50) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL,
+        role VARCHAR(10) NOT NULL DEFAULT 'user' -- 'admin' lub 'user'
     );
+    
 
     CREATE TABLE IF NOT EXISTS articles (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
