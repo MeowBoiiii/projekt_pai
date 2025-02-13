@@ -1,95 +1,163 @@
-/* Ustawienia podstawowe */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #2c3e50; /* Ciemne tło */
+    background-color: #2c3e50;
     margin: 0;
     padding: 0;
-    color: #ecf0f1; /* Jasny tekst dla lepszej czytelności */
+    color: #ecf0f1;
 }
 
-/* Nagłówki */
 h1, h2 {
     text-align: center;
-    color: #ecf0f1; /* Jasny kolor dla nagłówków */
+    color: #ecf0f1;
 }
 
-/* Panel admina */
 .admin-panel {
-    background-color: #34495e; /* Ciemny panel */
+    background-color: #34495e;
     margin: 20px auto;
     padding: 30px;
     max-width: 800px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ciemniejszy cień */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Formaty formularzy */
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-/* Pola formularzy */
-input[type="text"], input[type="file"], textarea, select {
+input[type="text"], input[type="password"], input[type="file"], textarea, select {
     padding: 12px;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #7f8c8d; /* Jasnoszary border */
-    background-color: #34495e; /* Tło w ciemnym kolorze */
-    color: #ecf0f1; /* Jasny tekst */
+    border: 1px solid #7f8c8d;
+    background-color: #34495e;
+    color: #ecf0f1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-input[type="text"]:focus, textarea:focus, select:focus {
-    border-color: #3498db; /* Kolor podświetlenia na niebiesko */
-    background-color: #2c3e50; /* Ciemniejszy kolor tła przy fokusie */
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+    border-color: #3498db;
+    background-color: #2c3e50;
 }
 
-/* Przycisk dodawania artykułu */
 button[type="submit"] {
-    padding: 15px;
+    padding: 12px;
     font-size: 16px;
-    background-color: #2980b9; /* Ciemniejszy niebieski */
+    background-color: #2980b9;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
 }
 
 button[type="submit"]:hover {
-    background-color: #1f6394; /* Jeszcze ciemniejszy niebieski na hover */
+    background-color: #1f6394;
 }
 
-/* Komunikaty */
 p {
     text-align: center;
     font-size: 18px;
 }
 
-/* Kolor komunikatów */
 p.success {
-    color: #2ecc71; /* Zielony */
+    color: #2ecc71;
 }
 
 p.error {
-    color: #e74c3c; /* Czerwony */
+    color: #e74c3c;
 }
 
-/* Układ dla zdjęcia */
 input[type="file"] {
     padding: 5px;
     border: 1px solid #7f8c8d;
-    background-color: #34495e; /* Ciemniejsze tło */
-    color: #ecf0f1; /* Jasny tekst */
+    background-color: #34495e;
+    color: #ecf0f1;
 }
 
-/* Marginesy i odstępy */
 div {
     margin-bottom: 20px;
 }
 
-/* Wyrównanie treści */
 textarea {
     min-height: 150px;
+}
+
+.article {
+    background-color: #4d6b84;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px auto;
+    max-width: 800px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.jasniejszydiv {
+    background-color: #8eb7d239;
+}
+
+.article.bottom_image {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.article.bottom_image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+    order: 2;
+}
+
+.article.bottom_image p {
+    order: 1;
+}
+
+/* Poprawiony styl dla background_image */
+.article.background_image {
+    background-size: cover; /* Sprawia, że zdjęcie tła zajmuje cały element */
+    background-position: center; /* Ustawia zdjęcie na środku */
+    color: white; /* Kolor tekstu dla lepszej czytelności */
+    padding: 40px; /* Przestrzeń wewnątrz artykułu */
+    border-radius: 8px; /* Zaokrąglenie krawędzi */
+    position: relative;
+}
+
+.article.background_image h2,
+.article.background_image p {
+    background: rgba(0, 0, 0, 0.5); /* Przyciemnienie tła tekstu */
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Nowe klasy dla top-image, image-float i bottom-image */
+.article.top-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.article.image-float img {
+    float: left;
+    margin: 0 15px 10px 0;
+    max-width: 40%;
+    height: auto;
+}
+
+.article.bottom-image img {
+    display: block;
+    margin: 15px auto;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
 }
