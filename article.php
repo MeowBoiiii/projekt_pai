@@ -1,5 +1,4 @@
 <?php 
-// article.php
 require_once 'db.php';
 
 $id = $_GET['id'] ?? 0;
@@ -18,7 +17,6 @@ if (!$article) {
 // Rozpoznanie layoutu
 $layout = $article['layout'];
 $image_path = $article['image_path'];
-
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -34,6 +32,7 @@ $image_path = $article['image_path'];
             margin: 20px auto;
             color: white;
             background: #34495e;
+            overflow: hidden; /* Zapobiega problemom z float */
         }
 
         /* Styl dla obrazu na górze */
@@ -44,18 +43,20 @@ $image_path = $article['image_path'];
         }
 
         /* Styl dla obrazu opływającego tekst */
+        .image-float {
+            overflow: hidden; /* Nowe! */
+        }
+
         .image-float img {
             float: left;
             margin: 0 15px 10px 0;
             max-width: 40%;
             height: auto;
+            display: block;
         }
 
-        /* Zapewnia, że tekst nie zawija się pod zdjęciem */
-        .image-float::after {
-            content: "";
-            display: block;
-            clear: both;
+        .image-float p {
+            overflow: hidden; /* Nowe! */
         }
 
         /* Styl dla obrazu na dole */
@@ -104,14 +105,15 @@ $image_path = $article['image_path'];
             style="background-image: url('<?php echo $image_path; ?>');"
         <?php endif; ?>
     >
-        <!-- Obrazek dla image_float musi być osadzony wewnątrz treści! -->
         <?php if ($layout === 'image_float' && !empty($image_path) && file_exists($image_path)): ?>
-            <img src="<?php echo $image_path; ?>" alt="Obrazek do artykułu" class="image-float" />
+            <div class="image-float">
+                <img src="<?php echo $image_path; ?>" alt="Obrazek do artykułu" />
+                <p><?php echo nl2br(htmlspecialchars($article['content'])); ?></p>
+            </div>
+        <?php else: ?>
+            <p><?php echo nl2br(htmlspecialchars($article['content'])); ?></p>
         <?php endif; ?>
 
-        <p><?php echo nl2br(htmlspecialchars($article['content'])); ?></p>
-
-        <!-- Obrazek dla układu bottom-image -->
         <?php if ($layout === 'bottom_image' && !empty($image_path) && file_exists($image_path)): ?>
             <img src="<?php echo $image_path; ?>" alt="Obrazek do artykułu" />
         <?php endif; ?>
